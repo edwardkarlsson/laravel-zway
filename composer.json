@@ -11,13 +11,12 @@
 		}
 	],
 	"require": {
-		"php": ">=7.0",
-		"laravel/framework": "~5.4",
-		"fzaninotto/faker": "~1.7"
+		"php": "^7.4|^8.0",
+		"laravel/framework": "^8.65"
 	},
 	"require-dev": {
-		"mockery/mockery": "^0.9.5",
-		"phpunit/phpunit": "~7.0"
+		"mockery/mockery": "^1.4.4",
+		"phpunit/phpunit": "^9.5.10"
 	},
 	"autoload": {
 		"psr-4": {
