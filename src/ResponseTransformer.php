@@ -3,12 +3,13 @@
 namespace ZWay;
 
 use ZWay\Responses\BaseResponse;
+use ZWay\Responses\Response;
 
 class ResponseTransformer
 {
-    protected $response;
+    protected Response $response;
 
-    public function setResponse($response)
+    public function setResponse(Response $response)
     {
         $this->response = $response;
 

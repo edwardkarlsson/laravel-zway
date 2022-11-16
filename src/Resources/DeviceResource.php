@@ -4,7 +4,7 @@ namespace ZWay\Resources;
 
 class DeviceResource extends BaseResource
 {
-    protected $endpoint = '/ZAutomation/api/v1/devices';
+    protected string $endpoint = '/ZAutomation/api/v1/devices';
 
     public function __construct($id)
     {

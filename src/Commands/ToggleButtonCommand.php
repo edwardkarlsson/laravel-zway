@@ -2,11 +2,9 @@
 
 namespace ZWay\Commands;
 
-use function PHPSTORM_META\type;
-
 class ToggleButtonCommand extends BaseCommand
 {
-    protected $endpoint = '/ZAutomation/api/v1/devices';
+    protected string $endpoint = '/ZAutomation/api/v1/devices';
 
     public function __construct($id)
     {
@@ -15,14 +13,14 @@ class ToggleButtonCommand extends BaseCommand
         parent::__construct();
     }
 
-    public function on()
+    public function on(): ToggleButtonCommand
     {
         $this->endpoint = $this->endpoint . '/on';
 
         return $this;
     }
 
-    public function off()
+    public function off(): ToggleButtonCommand
     {
         $this->endpoint = $this->endpoint . '/off';
 
