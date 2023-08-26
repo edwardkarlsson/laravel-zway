@@ -6,9 +6,9 @@ use ZWay\Responses\BaseResponse;
 
 class ResponseTransformer
 {
-    protected $response;
+    protected array $response;
 
-    public function setResponse($response)
+    public function setResponse(array $response)
     {
         $this->response = $response;
 

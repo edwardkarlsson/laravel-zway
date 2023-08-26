@@ -38,7 +38,7 @@ class ApiService
         $this->protocol = $protocol;
     }
 
-    public function get(string $endpoint)
+    public function get(string $endpoint): array
     {
         $url = $this->getUrl($endpoint);
 
@@ -50,7 +50,7 @@ class ApiService
         curl_setopt($c, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($c);
 
-        return json_decode($response);
+        return json_decode($response, true);
     }
 
     /**
