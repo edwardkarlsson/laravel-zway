@@ -9,7 +9,7 @@ class ResponseTransformer
 {
     protected array $response;
 
-    public function setResponse(array $response)
+    public function setResponse(array $response): ResponseTransformer
     {
         $this->response = $response;
 

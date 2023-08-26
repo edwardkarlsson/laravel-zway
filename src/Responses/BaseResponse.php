@@ -4,16 +4,16 @@ namespace ZWay\Responses;
 
 abstract class BaseResponse implements Response
 {
-    protected Response $response;
+    protected array $responseArray;
 
-    public function __construct($response)
+    public function __construct($responseArray)
     {
-        $this->response = $response;
+        $this->responseArray = $responseArray;
     }
 
-    public function getContent(): Response
+    public function getContent(): array
     {
-        return $this->response;
+        return $this->responseArray;
     }
 
     public function handle(): Response

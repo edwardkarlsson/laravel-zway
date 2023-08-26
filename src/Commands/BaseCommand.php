@@ -25,8 +25,8 @@ abstract class BaseCommand
 
     public function send(): Response
     {
-        $response = $this->api->get($this->endpoint);
+        $responseArray = $this->api->get($this->endpoint);
 
-        return $this->transformer->setResponse($response)->transform($this->transformerType);
+        return $this->transformer->setResponse($responseArray)->transform($this->transformerType);
     }
 }
