@@ -4,22 +4,19 @@ namespace ZWay\Responses;
 
 abstract class BaseResponse implements Response
 {
-    protected $response;
+    protected Response $response;
 
     public function __construct($response)
     {
         $this->response = $response;
     }
 
-    public function getContent()
+    public function getContent(): Response
     {
         return $this->response;
     }
 
-    /**
-     * @return Response
-     */
-    public function handle()
+    public function handle(): Response
     {
         return $this;
     }

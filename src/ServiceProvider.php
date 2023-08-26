@@ -4,11 +4,6 @@ namespace ZWay;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    /**
-     * Register the service provider.
-     *
-     * @return void
-     */
     public function register()
     {
         $this->mergeConfigFrom(
@@ -16,16 +11,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         );
     }
 
-    /**
-     * Bootstrap the application events.
-     *
-     * @return void
-     */
     public function boot()
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-    //            UserSumsUpdateCommand::class,
             ]);
         }
 

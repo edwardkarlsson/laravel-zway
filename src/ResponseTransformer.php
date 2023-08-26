@@ -3,6 +3,7 @@
 namespace ZWay;
 
 use ZWay\Responses\BaseResponse;
+use ZWay\Responses\Response;
 
 class ResponseTransformer
 {

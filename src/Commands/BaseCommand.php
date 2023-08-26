@@ -9,13 +9,12 @@ use ZWay\ResponseTransformer;
 
 abstract class BaseCommand
 {
-    private $api;
+    private ApiService $api;
 
-    protected $endpoint;
-    protected $hidden = ['api'];
-    protected $responseType;
-    protected $transformer;
-    protected $transformerType;
+    protected string $endpoint;
+    protected array $hidden = ['api'];
+    protected ResponseTransformer $transformer;
+    protected string $transformerType;
 
     public function __construct()
     {
@@ -24,10 +23,7 @@ abstract class BaseCommand
         $this->transformerType = str_replace('Command', 'Response', get_class($this));
     }
 
-    /**
-     * @return Response
-     */
-    public function send()
+    public function send(): Response
     {
         $response = $this->api->get($this->endpoint);
 

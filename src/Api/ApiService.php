@@ -4,9 +4,9 @@ namespace ZWay\Api;
 
 class ApiService
 {
-    private $host;
-    private $protocol;
-    private $port;
+    private string $host;
+    private string $protocol;
+    private int $port;
 
     public function __construct()
     {
@@ -14,28 +14,26 @@ class ApiService
         $this->port = config('zway.port');
         $this->protocol = config('zway.protocol');
     }
-    /**
-     * @param $host
-     */
-    public function setHost($host)
+
+    public function setHost(string $host): ApiService
     {
         $this->host = $host;
+
+        return $this;
     }
 
-    /**
-     * @param $port
-     */
-    public function setPort($port)
+    public function setPort(int $port): ApiService
     {
         $this->port = $port;
+
+        return $this;
     }
 
-    /**
-     * @param $protocol
-     */
-    public function setProtocol($protocol)
+    public function setProtocol(string $protocol): ApiService
     {
         $this->protocol = $protocol;
+
+        return $this;
     }
 
     public function get(string $endpoint): array
@@ -53,11 +51,6 @@ class ApiService
         return json_decode($response, true);
     }
 
-    /**
-     * @param string $endpoint
-     *
-     * @return string
-     */
     private function getUrl(string $endpoint): string
     {
         return $this->protocol . '://' . $this->host . ':' . $this->port . $endpoint;

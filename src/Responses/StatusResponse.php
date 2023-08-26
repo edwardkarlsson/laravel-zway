@@ -4,7 +4,7 @@ namespace ZWay\Responses;
 
 class StatusResponse extends BaseResponse
 {
-    public function handle()
+    public function handle(): Response
     {
         return $this;
     }
